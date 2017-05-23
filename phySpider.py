@@ -1,7 +1,6 @@
 #!/bin/env python3
 # -*- coding: UTF-8 -*-
 # Scan if there's any empty seat to play physics exp..
-# License: Unauthorized copy is strictly FORBIDDEN.
 # By Recolic Keghart, Apr 26, 2017
 
 import urllib.parse, urllib.request
