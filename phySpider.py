@@ -6,20 +6,24 @@
 import urllib.parse, urllib.request
 import sys
 
-weekNumberList = [14,15,16,17,18]
-experimentNumberList = [37,38,39,40,41,42,43,44]
+#weekNumberList = [14,15,16,17,18]
+#experimentNumberList = [37,38,39,40,41,42,43,44]
+weekNumberList = [12,13,14,15,16,17]
+experimentNumberList = [52,53,54,55,56,57,58,59]
+
+
 errorPageDump = '/home/recolic/tmp/phySpiderDump.html'
 
 # Needn't edit below.
 experimentNumberDict = {
-    37:'分光计',
-    38:'多功能摆',
-    41:'直流电桥',
-    42:'伏安特性',
-    40:'密里根油滴',
-    43:'声速测量',
-    44:'示波器',
-    39:'霍尔效应'
+    57:'稳态测固体导热系数',
+    59:'电路的暂态过程',
+    58:'音叉实验',
+    56:'扭摆测转动惯量',
+    54:'光电效应',
+    52:'液体张力',
+    53:'偏振双折射',
+    55:'组合光学'
     }
 
 

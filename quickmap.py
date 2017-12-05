@@ -8,44 +8,52 @@ from scipy.optimize import leastsq
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 
-def GetMap(parrX, parrY, windowX = 12, windowY = 8, line = False, passO = False):
+def dotMultiply(vctA, vctB):
+    if len(vctA) != len(vctB):
+        print("Error: While vcta is ", vctA, " and vctb is ", vctB)
+        raise ValueError("dotmulti needs lena == lenb.")
+    ans = 0
+    for a, b in zip(vctA, vctB):
+        ans += a * b
+    return ans
+
+def GetMap(parrX, parrY, windowSizeX=12, windowSizeY=8, extendXRate=1, line=False, passO=False, maxXPower=1):
     print('Generic-GetMap by Recolic.')
     arrX, arrY = parrX, parrY
-    maxX, maxY = max(arrX)*1.2, max(arrY)*1.25
-
+    maxX = max(arrX) * extendXRate
     # Do calculate
-    # y = k x + b (I = k V + b)
+    # y = [k0 k1 k2 ...] dot [x^0 x^1 x^2 ...]
     print('Your input: ', arrX, '|', arrY)
     print('Data collection done. Generating result...')
-    V, I = numpy.array(arrX), numpy.array(arrY)
-    def lineFunc(kb, v):
-        k,b=kb
-        if passO:
-            return k*v
-        else:
-            return k*v+b
+    X, Y = numpy.array(arrX), numpy.array(arrY)
 
-    lossFunc = lambda kb, v, i : lineFunc(kb, v) - i
+    def lineFunc(k, x):
+        vctX = [x ** power for power in range(maxXPower + 1)]
+        if passO:
+            vctX[0] = 0
+        return dotMultiply(k, vctX)
+
+    def lossFunc(k, x, y): return lineFunc(k, x) - y
 
     # Fire!
     if line:
-        kb0 = [10,0]
-        kbFinal = leastsq(lossFunc, kb0, args=(V, I))
-        k,b=kbFinal[0]
-        print('Fit line done. Y=', k, 'X +', b)
+        kInit = [1 for _ in range(maxXPower + 1)]
+        kInit[0] = 0 # guarantee passO.
+        kFinal, _ = leastsq(lossFunc, kInit, args=(X, Y))
+        print('Fit line done. k=', kFinal)
     else:
         print('Drawing map without fitting a line...')
 
     # Draw function map.
-    rcParams['grid.linestyle']='-'
+    rcParams['grid.linestyle'] = '-'
     rcParams['grid.color'] = 'blue'
     rcParams['grid.linewidth'] = 0.2
-    plt.figure(figsize=(windowX, windowY))
-    plt.scatter(V,I,color="red",label="Sample Point",linewidth=3)
+    plt.figure(figsize=(windowSizeX, windowSizeY))
+    plt.scatter(X, Y, color="red", label="Sample Point", linewidth=3)
     if line:
-        px=numpy.linspace(0,maxX,1000)
-        py=k*px+b
-        plt.plot(px,py,color="orange",label="Fitting Line",linewidth=2)
+        px = numpy.linspace(0, maxX, 1000)
+        py = dotMultiply(kFinal, [px ** power for power in range(maxXPower + 1)])
+        plt.plot(px, py, color="orange", label="Fitting Line", linewidth=2)
     plt.legend()
     plt.grid()
     plt.show()
