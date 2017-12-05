@@ -2,4 +2,4 @@
 
 Pick what you want.
 
-Free license.
+You can also get data processor at https://recolic.net/phy and https://recolic.net/phy2.
