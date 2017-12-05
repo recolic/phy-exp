@@ -18,6 +18,18 @@ def dotMultiply(vctA, vctB):
     return ans
 
 def GetMap(parrX, parrY, windowSizeX=12, windowSizeY=8, extendXRate=1, extendYRate=1, line=False, passO=False, maxXPower=1, inverseK=False):
+    '''
+    Arguments:
+    parrX and parrY: array of coordinates of points. Ex: GetMap([1,2,3,4,5], [1,2,3,4,5]) -> y=x
+    line: Should I draw a fitting line?
+    passO: Should the fitting line pass (0,0)? That's saying, should k0 be zero?
+    maxXPower: If I should draw a fitting line, what polynomial function should I use? Ex: GetMap([1,2,3,4,5], [1,4,9,16,25], line=True, maxXPower) -> y=x^2
+    inverseK: Usually, I'm drawing the curl `y=KX`, while K=[k0,k1,k2,...], X=[x^0,x^1,x^2,...]. If this switch is set, I'll drawing the curl `KY=x`. Don't worry, this switch is transparent to you.
+    Ex: GetMap([0,1,1,4,4,9,9], [0,1,-1,2,-2,3,-3], maxXPower=2, line=True, inverseK=True) -> y^2=x
+    
+    ReturnValue:
+    void
+    '''
     print('Generic-GetMap by Recolic.')
     arrX, arrY = parrX, parrY
     maxX, maxY = max(arrX) * extendXRate, max(arrY) * extendYRate
@@ -42,10 +54,10 @@ def GetMap(parrX, parrY, windowSizeX=12, windowSizeY=8, extendXRate=1, extendYRa
         kInit[0] = 0 # guarantee passO.
         if inverseK:
             kFinal, _ = leastsq(lossFunc, kInit, args=(Y, X))
-            print('Fit line done. k^-1=', kFinal)
+            print('Fitting line done. k^-1=', kFinal)
         else:
             kFinal, _ = leastsq(lossFunc, kInit, args=(X, Y))
-            print('Fit line done. k=', kFinal)
+            print('Fitting line done. k=', kFinal)
     else:
         print('Drawing map without fitting a line...')
 

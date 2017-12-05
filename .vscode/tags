@@ -5,7 +5,7 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 DrawPoint.py	../DrawPoint.py	1;"	kind:file	line:1
-GetMap	../quickmap.py	/^def GetMap(parrX, parrY, windowX = 12, windowY = 8, line = False, passO = False):$/;"	kind:function	line:11
+GetMap	../quickmap.py	/^def GetMap(parrX, parrY, windowSizeX=12, windowSizeY=8, extendXRate=1, extendYRate=1, line=False, passO=False, maxXPower=1, inverseK=False):$/;"	kind:function	line:20
 GetMap	../sound/quickmap.py	/^def GetMap(parrX, parrY, windowX = 12, windowY = 8, line = False, passO = False):$/;"	kind:function	line:11
 GetMap	../va/quickmap.py	/^def GetMap(parrX, parrY, windowX = 12, windowY = 8, line = False, passO = False):$/;"	kind:function	line:11
 HallEffect.py	../hall/HallEffect.py	1;"	kind:file	line:1
@@ -33,7 +33,9 @@ dataset	../input/dataInput.py	/^dataset=numpy.loadtxt(sys.argv[1], delimiter=' '
 dataset	../sound/dataInput.py	/^dataset=numpy.loadtxt(sys.argv[1], delimiter=' ')$/;"	kind:variable	line:13
 doLogin	../phySpider.py	/^def doLogin():$/;"	kind:function	line:30
 doTest	../phySpider.py	/^def doTest(expNum, weekNum, cookieStr):$/;"	kind:function	line:41
+dotMultiply	../quickmap.py	/^def dotMultiply(vctA, vctB):$/;"	kind:function	line:11
 draw	../va/va.py	/^from quickmap import GetMap as draw$/;"	kind:namespace	line:4
+draw1.py	../ThermalConductivity/draw1.py	1;"	kind:file	line:1
 dumpWebpage	../phySpider.py	/^def dumpWebpage(content, filePath):$/;"	kind:function	line:36
 en.py	../input/en.py	1;"	kind:file	line:1
 errorPageDump	../phySpider.py	/^errorPageDump = '\/home\/recolic\/tmp\/phySpiderDump.html'$/;"	kind:variable	line:15
@@ -72,12 +74,13 @@ leastsq	../va/quickmap.py	/^from scipy.optimize import leastsq$/;"	kind:namespac
 lineFunc	../hall/HallEffect.py	/^def lineFunc(kb, i):$/;"	kind:function	line:60
 lineFunc	../hall/HallEffect2.py	/^def lineFunc(kb, v):$/;"	kind:function	line:59
 lineFunc	../oil/oil0.py	/^def lineFunc(kb, v):$/;"	kind:function	line:21
-lineFunc	../quickmap.py	/^    def lineFunc(kb, v):$/;"	kind:function	line:21
+lineFunc	../quickmap.py	/^    def lineFunc(k, x):$/;"	kind:function	line:31
 lineFunc	../sound/quickmap.py	/^    def lineFunc(kb, v):$/;"	kind:function	line:21
 lineFunc	../va/quickmap.py	/^    def lineFunc(kb, v):$/;"	kind:function	line:21
 lossFunc	../hall/HallEffect.py	/^lossFunc = lambda kb, i, v : lineFunc(kb, i) - v$/;"	kind:variable	line:64
 lossFunc	../hall/HallEffect2.py	/^lossFunc = lambda kb, v, i : lineFunc(kb, v) - i$/;"	kind:variable	line:63
 lossFunc	../oil/oil0.py	/^lossFunc = lambda kb, v, i : lineFunc(kb, v) - i$/;"	kind:variable	line:25
+lossFunc	../quickmap.py	/^    def lossFunc(k, x, y): return abs(lineFunc(k, x) - y)$/;"	kind:function	line:37
 m_cookie	../phySpider.py	/^                m_cookie=m_cookie[0:len(m_cookie)-2]$/;"	kind:variable	line:99
 m_cookie	../phySpider.py	/^            m_cookie = cookieFile.readline()$/;"	kind:variable	line:97
 m_cookie	../phySpider.py	/^        m_cookie = input()$/;"	kind:variable	line:102
@@ -123,6 +126,7 @@ px	../oil/oil0.py	/^px=numpy.linspace(0,maxX,1000)$/;"	kind:variable	line:39
 py	../hall/HallEffect.py	/^py=k*px+b$/;"	kind:variable	line:79
 py	../hall/HallEffect2.py	/^py=k*px+b$/;"	kind:variable	line:78
 py	../oil/oil0.py	/^py=k*px+b$/;"	kind:variable	line:40
+quickmap	../test.py	/^import quickmap$/;"	kind:namespace	line:1
 quickmap.py	../quickmap.py	1;"	kind:file	line:1
 quickmap.py	../sound/quickmap.py	1;"	kind:file	line:1
 quickmap.py	../va/quickmap.py	1;"	kind:file	line:1
@@ -151,13 +155,14 @@ sys	../oil/oil0.py	/^import numpy, sys$/;"	kind:namespace	line:6
 sys	../phySpider.py	/^import sys$/;"	kind:namespace	line:7
 sys	../sound/dataInput.py	/^import sys$/;"	kind:namespace	line:7
 sys	../va/va.py	/^import sys$/;"	kind:namespace	line:3
+test.py	../test.py	1;"	kind:file	line:1
 time	../input/dataInput.py	/^print('import time')$/;"	kind:namespace	line:16
 time	../input/en.py	/^print('import time')$/;"	kind:namespace	line:15
 time	../sound/dataInput.py	/^print('import time')$/;"	kind:namespace	line:16
 toFloat	../hall/HallEffect.py	/^def toFloat(sstr):$/;"	kind:function	line:85
 toFloat	../hall/HallEffect2.py	/^def toFloat(sstr):$/;"	kind:function	line:84
 toFloat	../oil/oil0.py	/^def toFloat(sstr):$/;"	kind:function	line:46
-toFloat	../quickmap.py	/^    def toFloat(sstr):$/;"	kind:function	line:53
+toFloat	../quickmap.py	/^    def toFloat(sstr):$/;"	kind:function	line:70
 toFloat	../sound/quickmap.py	/^    def toFloat(sstr):$/;"	kind:function	line:53
 toFloat	../va/quickmap.py	/^    def toFloat(sstr):$/;"	kind:function	line:53
 tryDump	../phyCracker.py	/^def tryDump(sid):$/;"	kind:function	line:57
@@ -168,5 +173,7 @@ va.py	../va/va.py	1;"	kind:file	line:1
 weekNumberList	../phySpider.py	/^weekNumberList = [12,13,14,15,16,17]$/;"	kind:variable	line:11
 x	../DrawPoint.py	/^x=xrc$/;"	kind:variable	line:7
 xrc	../DrawPoint.py	/^xrc=[0.0, 2.0, 4.0, 10.0, 20.0, 22.0, 25.0, 30.0, 33.0, 35.0, 37.0, 38.0, 38.5, 39.0, 39.6, 40.0, 40.5, 41.0, 43.0, 44.0, 45.0, 46.0, 47.0, 48.0, 49.0, 50.0, 53.0, 55.0, 60.0]$/;"	kind:variable	line:6
+xrc	../test.py	/^xrc=[0.0, 2.0, 4.0, 10.0, 20.0, 22.0, 25.0, 30.0, 33.0, 35.0, 37.0, 38.0, 38.5, 39.0, 39.6, 40.0, 40.5, 41.0, 43.0, 44.0, 45.0, 46.0, 47.0, 48.0, 49.0, 50.0, 53.0, 55.0, 60.0]$/;"	kind:variable	line:4
 y	../DrawPoint.py	/^y=[abs(yi) for yi in yrc]$/;"	kind:variable	line:8
 yrc	../DrawPoint.py	/^yrc=[-6.77, -6.78, -6.78, -6.76, -6.73, -6.73, -6.72, -6.70, -6.69, -6.67, -6.60, -6.45, -6.37, -6.20, -5.99, -5.77, -5.45, -5.07, -3.52, -2.87, -2.36, -2.08, -1.77, -1.55, -1.40, -1.26, -0.97, -0.84, -0.64]$/;"	kind:variable	line:5
+yrc	../test.py	/^yrc=[-6.77, -6.78, -6.78, -6.76, -6.73, -6.73, -6.72, -6.70, -6.69, -6.67, -6.60, -6.45, -6.37, -6.20, -5.99, -5.77, -5.45, -5.07, -3.52, -2.87, -2.36, -2.08, -1.77, -1.55, -1.40, -1.26, -0.97, -0.84, -0.64]$/;"	kind:variable	line:3

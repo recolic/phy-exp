@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 
 def GetMap(parrX, parrY, windowX = 12, windowY = 8, line = False, passO = False):
-    print('Generic-GetMap by Recolic.')
+    print('This quickmap.py is deleted becaused of out of date!!!')
     arrX, arrY = parrX, parrY
     maxX, maxY = max(arrX)*1.2, max(arrY)*1.25
 
