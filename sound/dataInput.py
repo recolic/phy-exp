@@ -12,6 +12,7 @@ if len(sys.argv) < 2:
 import numpy
 dataset=numpy.loadtxt(sys.argv[1], delimiter=' ')
 print('#!/bin/env python3')
+print('# Warning: deprecated script!')
 print('from pykeyboard import PyKeyboard')
 print('import time')
 print('k=PyKeyboard()')
