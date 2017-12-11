@@ -134,7 +134,7 @@ def DataFileToXYArray(fname, lineDelimiter = '\n', wordDelimiter = ' ', commentS
     for ori_line in s.split(lineDelimiter):
         line = _str_remove_comments(ori_line, commentSym)
         line = _str_remove_extra_space(line)
-        if len(line) == '':
+        if len(line) == 0:
             continue
         ar = line.split(wordDelimiter)
         if len(ar) < 2:
@@ -148,4 +148,3 @@ def DataFileToXYArray(fname, lineDelimiter = '\n', wordDelimiter = ' ', commentS
         except:
             print('At data line "{}":'.format(ori_line))
     return xArray, yArray
-        
