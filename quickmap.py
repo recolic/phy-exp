@@ -67,12 +67,9 @@ def GetMap(arrX, arrY, windowSizeX=12, windowSizeY=8, extendXRate=1, extendYRate
             kFinal, _ = leastsq(lossFunc, kInit, args=(X, Y))
             print('Fitting line done. k=', kFinal)
     else:
-        print('Drawing map without fitting a line...')
+        print('Drawing map without fitting a line...\n')
 
     # Draw function map.
-    rcParams['grid.linestyle'] = '-'
-    rcParams['grid.color'] = 'blue'
-    rcParams['grid.linewidth'] = 0.2
     plt.figure(figsize=(windowSizeX, windowSizeY))
     plt.scatter(X, Y, color="red", label="Sample Point", linewidth=3)
     if polyLine:
