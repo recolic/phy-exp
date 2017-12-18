@@ -70,7 +70,7 @@ def GetLine(arrX, arrY, name=fetchAnonymousLineName(), extendXRate=1, extendYRat
     Ex: GetLine([0,1,1,4,4,9,9], [0,1,-1,2,-2,3,-3], poly_maxXPower=2, polyLine=True, poly_inverseK=True) -> y^2=x
     
     ReturnValue:
-    void
+    A tuple with information describing the line.
     '''
     if polyLine and smoothLine:
         raise RuntimeError("bad argument: polyLine and smoothLine can't been set simultaneously.")
