@@ -11,7 +11,7 @@ from scipy.interpolate import spline
 
 from deprecated import deprecated
 
-def dotMultiply(vctA, vctB):
+def _dotMultiply(vctA, vctB):
     if len(vctA) != len(vctB):
         print("Error: While vcta is ", vctA, " and vctb is ", vctB)
         raise ValueError("dotmulti needs lena == lenb.")
@@ -92,7 +92,7 @@ def GetLine(arrX, arrY, name=fetchAnonymousLineName(), extendXRate=1, extendYRat
         vctX = [x ** power for power in range(poly_maxXPower + 1)]
         if poly_passO:
             vctX[0] = 0
-        return dotMultiply(k, vctX)
+        return _dotMultiply(k, vctX)
 
     def lossFunc(k, x, y): return abs(lineFunc(k, x) - y)
 
@@ -111,10 +111,10 @@ def GetLine(arrX, arrY, name=fetchAnonymousLineName(), extendXRate=1, extendYRat
     if polyLine:
         if poly_inverseK:
             py = numpy.linspace(minY, maxY, 1000)
-            px = dotMultiply(kFinal, [py ** power for power in range(poly_maxXPower + 1)])
+            px = _dotMultiply(kFinal, [py ** power for power in range(poly_maxXPower + 1)])
         else:
             px = numpy.linspace(minX, maxX, 1000)
-            py = dotMultiply(kFinal, [px ** power for power in range(poly_maxXPower + 1)])
+            py = _dotMultiply(kFinal, [px ** power for power in range(poly_maxXPower + 1)])
     elif smoothLine:
         px = numpy.linspace(minX, maxX, 1000)
         py = spline(X, Y, px)
