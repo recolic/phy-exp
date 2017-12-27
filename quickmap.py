@@ -37,7 +37,7 @@ def GetMultiMap(lines, windowSizeX=12, windowSizeY=8):
     '''
     Usage: GetMultiMap(GetLine([1,2,3], [1,4,9]) + GetLine([2,2.1,2.2], [6,7,8]) + ...)
     '''
-    colors = ['red', 'orange', 'blue', 'green', 'yellow', 'magenta', 'cyan', 'black'] # You can add more color like: '#123456', '#FFFFAE', etc
+    colors = ['red', 'orange', 'blue', 'green', '#009999', '#00cccc', 'yellow', 'black'] # You can add more color like: '#123456', '#FFFFAE', etc
     def __fetchColor():
         for color in colors:
             yield color
@@ -53,6 +53,7 @@ def GetMultiMap(lines, windowSizeX=12, windowSizeY=8):
             raise ValueError('Invalid line passed to GetMultiMap. Assertion len(px) == len(py) failed because {} != {}.'.format(len(px), len(py)))
         if len(px) != 0:
             plt.plot(px, py, color=fetchColor(), label="Fitting Line ({})".format(name), linewidth=2)
+    #plt.legend()
     plt.grid()
     plt.show()
 
