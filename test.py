@@ -12,9 +12,12 @@
 
 import quickmap
 
-x, y = quickmap.DataFileToXYArray('test.dat')
+#x, y = quickmap.DataFileToXYArray('test.dat')
+x=[8.214,7.408,6.879,5.490,5.196]
+x=[i * 10**14 for i in x]
+y=[-1.715,-1.466,-1.180,-0.620,-0.509]
 quickmap.GetMap(x,y,polyLine=True)
-
+exit(0)
 
 x=[50,80,110,140,170,200]
 y=[63.7,75.0,93.7,112.0,126.1,143.0]
