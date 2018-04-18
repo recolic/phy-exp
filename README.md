@@ -11,6 +11,16 @@ Tip: folder name with leading lowercase letter indicates: this experiment was ma
                  with leading uppercase letter          :                             second
 ```
 
+## What's here?
+
+virtualtype.py: virtually type an array into `https://recolic.net/phy` or `https://recolic.net/phy2`, using `\t` as seperater.
+
+quickmap.py: draw an image quickly for phy-exp.
+
+phySpider.py: Check if there's any free seat in phy-exp.
+
+phyCracker.py: Try default/any password and pull student info/do some other things.
+
 ## 黑名单
 
 电路的暂态过程 柯圣志 禁止使用计算机作图 对抄写报告要求严格
