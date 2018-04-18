@@ -4,10 +4,12 @@ Pick what you want.
 
 You can also get data processor at https://recolic.net/phy and https://recolic.net/phy2.
 
-''' sh
+**DeplecatedWarning: All scripts must use ./quickmap.py however some of them don't (because of historical reason). Fix it by yourself if there's any bug.**
+
+``` sh
 Tip: folder name with leading lowercase letter indicates: this experiment was made at first semester.
                  with leading uppercase letter          :                             second
-'''
+```
 
 ## 黑名单
 
