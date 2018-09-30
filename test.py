@@ -5,7 +5,8 @@
 #
 #quickmap.GetMap(xrc, yrc, line=True, maxXPower=16, inverseK=True)
 #
-#import virtualtype
+import virtualtype
+virtualtype._type('knY58btMJ8MU1J9k')
 
 #virtualtype.virtual_type_array([99.78,8.26,99.82,9.86,99.72,8.4,99.7,9.9,99.72,8.42,99.72,9.88,99.68,8.34,99.72,9.74,99.7,8.2,99.86,9.82])
 #virtualtype.virtual_type_array([42.5,42.2,41.9,41.5,41.2,40.9,40.5,40.3,40.0,39.7])

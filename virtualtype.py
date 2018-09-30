@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # Use this script with https://recolic.net/phy and https://recolic.net/phy2 
 #     to avoid typing fucked numbers into page by hand.
+# Fuck the chinese shits who prevent you from pasting password.
+#     E.x. Alibaba bitch
 from pykeyboard import PyKeyboard
 import time
 
