@@ -7,7 +7,12 @@ import numpy
 from scipy.optimize import leastsq
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
-from scipy.interpolate import spline
+
+# spline was removed from scipy 1.3.1
+try:
+    from scipy.interpolate import spline
+except ImportError:
+    from scipy.interpolate import BSpline as spline
 
 from deprecated import deprecated
 
